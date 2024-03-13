@@ -17,13 +17,18 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let percentMonth = percent / 100 / 12;
   let loanBody = amount - contribution;
 
-  let paySum = loanBody * (percentMonth + (percentMonth / (Math.pow(1 + percentMonth), countMonths)));
+  let paySum = loanBody * (percentMonth + (percentMonth / (Math.pow((1 + percentMonth), countMonths) - 1)));
   let totalSum = paySum * countMonths;
 
   return +(totalSum.toFixed(2));
 }
 
 function testCase(){
-  (calculateTotalMortgage(10, 0, 50000, 12) == 52749.53)? console.log('Первый тест прошел'):
+  let sum = calculateTotalMortgage(10, 0, 50000, 12);
+  (sum === 52749.53)? console.log('Первый тест прошел'):
+   console.log('Все плохо');
+   sum = calculateTotalMortgage(15, 0, 10000, 36);
+   (sum === 12479.52)? console.log('Последний тест прошел'):
    console.log('Все плохо');
 }
+testCase();
