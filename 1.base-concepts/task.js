@@ -25,10 +25,14 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
 function testCase(){
   let sum = calculateTotalMortgage(10, 0, 50000, 12);
+
   (sum === 52749.53)? console.log('Первый тест прошел'):
    console.log('Все плохо');
+
    sum = calculateTotalMortgage(15, 0, 10000, 36);
+   
    (sum === 12479.52)? console.log('Последний тест прошел'):
    console.log('Все плохо');
 }
+
 testCase();
