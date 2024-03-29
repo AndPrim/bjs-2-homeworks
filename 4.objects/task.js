@@ -33,7 +33,7 @@ Student.prototype.getAverage = function () {
 
 
 // Student.prototype.getAverage = function () {
-//     if(this.hasOwnProperty('marks') && this.marks.length != 0){
+//     if(this.hasOwnProperty("marks") && this.marks.length != 0){
 //         return this.marks.reduce((acc, num, index, arr) => ass + num / arr.length, 0);
 //     } else {
 //         return 0;
