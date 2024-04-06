@@ -61,4 +61,7 @@ class AlarmClock {
 
 console.log("________________________Test________________________");
 
-console.log(AlarmClock.getCurrentFormattedTime);
+let clock = new AlarmClock;
+console.log(clock.getCurrentFormattedTime());
+clock.addClock("14:30", "zzzzzzz");
+console.log(clock.alarmCollection);
