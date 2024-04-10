@@ -1,4 +1,6 @@
-const md5 = require('js-md5');
+// npm install js-md5
+// javascript
+//const md5 = require('js-md5');
 //Задача № 1
 function cachingDecoratorNew(func) {
     let cache = [];
@@ -23,6 +25,7 @@ function cachingDecoratorNew(func) {
     }
     return wrapper;
   }
+
   
   //Задача № 2
   function debounceDecoratorNew(func, delay) {
