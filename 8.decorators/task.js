@@ -1,13 +1,15 @@
+const md5 = require('js-md5');
 //Задача № 1
 function cachingDecoratorNew(func) {
     let cache = [];
     function wrapper(...args) {
-      const hash = md5(args);
+      const hash = md5(JSON.stringify(args));
 
       
-      if (cache.find(item => item.hash === hash)) {
-        return `Из кэша: ${objectInCache.value}`;
-      }
+    let objectInCache = cache.find(item => item.hash === hash);
+    if (objectInCache) {
+      return `Из кэша: ${objectInCache.value}`;
+    }
 
       let result = func(...args);
       cache.push({ "hash": hash, "value": result });
@@ -39,7 +41,7 @@ function cachingDecoratorNew(func) {
         wrapper.count++;
         isTrottled = true;
       }
-      
+
       wrapper.allCount++;
     }
     wrapper.count = 0;
